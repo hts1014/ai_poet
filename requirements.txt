@@ -1,0 +1,5 @@
+streamlit
+langchain-community
+python-dotenv  # 로컬 환경에서 .env 파일을 로드하기 위해 필요
+requests
+openai
