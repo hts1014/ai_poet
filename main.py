@@ -3,6 +3,14 @@ import streamlit as st
 import time
 from langchain_community.chat_models import ChatOpenAI  # langchain_community에서 ChatOpenAI를 가져옵니다.
 
+# 환경에 따라 다른 이미지 경로 설정
+if os.getenv("STREAMLIT_ENV") == "cloud":
+    # Streamlit Cloud 배포 환경에서는 이미지 대신 스피너만 표시
+    poet_image_path = None
+else:
+    # 로컬 환경에서 로컬 이미지 파일 경로 사용
+    poet_image_path = "C:/lanachain/poet/poet_image.png"
+
 # API 키 가져오기 및 ChatOpenAI 인스턴스 생성
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
